@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -32,7 +33,7 @@ const routes: Routes = [
     //   isLogged:false,
     // }
   },
-    // {
+  //   {
   //   path: '**',
   //   component: PageNotFoundComponent,
   // }

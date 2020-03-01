@@ -13,6 +13,9 @@ import { PasswordsMatchDirective } from './authentication/validators/directives/
 import { AuthenticationModule } from './authentication/authentication.module';
 import { EvenModule } from './even/even.module';
 import { RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserModule } from './user/user.module';
+
 
 
 
@@ -20,6 +23,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AppComponent,
     HomeComponent,
+    PageNotFoundComponent,
+
 
   ],
   imports: [
@@ -28,6 +33,7 @@ import { RouterModule } from '@angular/router';
     AuthenticationModule,
     EvenModule,
     CoreModule,
+    UserModule,
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
