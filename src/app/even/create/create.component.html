@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<form [formGroup]='form' (ngSubmit)="createEventHandler()">
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">Organize Event</h1>
+      <p>Fill up the following information!</p>
+    </div>
+
+    <div class="form-label-group">
+      <label for="inputEventName">Event</label>
+      <input type="text" id="inputEventName" formControlName="name" class="form-control" placeholder="Event">
+      <p class="error-message" *ngIf="this.form.get('name').invalid && this.form.get('name').touched">Enter event name</p> 
+    </div>
+
+    <div class="form-label-group">
+      <label for="inpuEventDate">Date</label>
+      <input type="text" id="inpuEventDate" formControlName="dateTime" class="form-control" placeholder="Date" >
+      <p class="error-message" *ngIf="this.form.get('dateTime').invalid && this.form.get('dateTime').touched">Enter date in format:"dd/mm/yyyy"</p>
+      
+    </div>
+
+    <div class="form-label-group">
+      <label for="inputEventDescription">Description</label>
+      <textarea type="text" id="inputEventDescription" formControlName="description" class="form-control" placeholder="Description"></textarea>
+      <p class="error-message" *ngIf="this.form.get('description').invalid && this.form.get('description').touched">Description should be > 50 symbols!</p>
+    </div>
+
+    <div class="form-label-group">
+      <label for="inputEventImage">Image</label>
+      <input type="text" id="inputEventImage" formControlName="imageURL" class="form-control" placeholder="Image" >
+      <p class="error-message" *ngIf="this.form.get('imageURL').invalid && this.form.get('imageURL').touched" >Please provide valid url</p>
+    </div>
+
+     <div style="display: none">
+      <input class="form-control"  formControlName ="peopleInterestedIn" />
+      <input  [value]="organizer" class="form-control"  formControlName="organizer"  />
+    </div>
+    <button [disabled]="form.invalid" class="btn btn-lg btn-dark btn-block">Organize it</button>
+    
+    <p class="mt-5 mb-3 text-muted text-center">© UniEnt - 2020.</p>
+</form>

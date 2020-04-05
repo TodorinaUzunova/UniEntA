@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<form #loginForm="ngForm" (ngSubmit)="handleLogin(this.loginForm.value)">
+
+    <div class="text-center mb-4">
+      <h1 class="h2 mb-3 font-weight-bold">Login</h1>
+      <p>You are on one step of awesome events!</p>
+    </div>
+
+    <div class="form-label-group">
+      <input #usernameInput="ngModel" ngModel  type="text" id="inputUsername" name="username" autocomplete="username"class="form-control" placeholder="Username" required email>
+      <label for="inputUsername">Username</label>
+      <p class="error-message" *ngIf= "usernameInput.invalid && usernameInput.touched"> Please enter valid email as username!</p>
+    </div>
+
+    <div  class="form-label-group">
+      <input #passwordInput="ngModel" ngModel type="password" id="inputPassword" name="password"  autocomplete="current-password" class="form-control" placeholder="Password" required minlength="6">
+      <label for="inputPassword">Password</label>
+      <p class="error-message" *ngIf= "passwordInput.invalid && passwordInput.touched"> Please enter valid password -more than 6 symbols!</p>
+    </div>
+
+    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Login</button>
+
+    <div class="text-center mb-4">
+      <p class="alreadyUser"> Don't have account? Then just
+        <a routerLink="/register">Register</a>!
+      </p>
+    </div>
+    
+       <p class="mt-5 mb-3 text-muted text-center">© UniEnt - 2020.</p>
+{{loginForm.value| json}}
+  </form>

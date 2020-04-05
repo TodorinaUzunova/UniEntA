@@ -1,0 +1,18 @@
+<div class="col-md-12">
+    <div class="col-md-6  text-center col-lg">
+      <img class="profile-img" src="../../../assets/user-profile.jpg" />
+    </div>
+  
+    <div class="col-md-6 text-center col-lg profile-info">
+      <h3>USERNAME: <span>{{username}}</span></h3>
+      <p class="infoType">ORGANIZER of {{myEvents.length}} EVENTS.</p>
+      <div *ngIf="myEvents">
+        <ul *ngFor="let event of myEvents" class="list-group">
+            <li class="list-group-item"><a [routerLink]="['/event', 'details', event._id ]">{{event.name}}</a></li>
+          </ul>
+      </div>
+   
+      <p *ngIf="myEvents.length===0" class="infoType" >NO ORGANIZED EVENTS</p>
+    </div>
+  </div>
+  
