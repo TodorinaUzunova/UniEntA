@@ -4,7 +4,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { AuthGuard } from './authentication/auth.guard';
 
 
 const routes: Routes = [
@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-    //canActivate:[AuthGuard],
+    // canActivate:[AuthGuard],
     // data:{
     //    isLogged:false,
     // }
@@ -28,7 +28,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    //canActivate:[AuthGuard],
+    // canActivate:[AuthGuard],
     // data:{
     //   isLogged:false,
     // }
